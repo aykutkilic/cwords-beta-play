@@ -10,16 +10,18 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Bulmaca 3D">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a63a33'/%3E%3Cpath d='M7 7h18v18H7z' fill='%23fffaf0'/%3E%3Cpath d='M16 7v18M7 16h18' stroke='%235d1f1b' stroke-width='2'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="v/4e41c0e572-20261125215128/client/style.css">
+<link rel="stylesheet" href="v/4e41c0e572-20261125231612/client/style.css">
 </head>
-<body>
+<body class="no-music">
 <canvas id="view"></canvas>
 <header id="bar">
-  <button id="shelfBtn" class="tool"></button><button id="pencilBtn" class="tool on"></button><button id="eraserBtn" class="tool"></button><button id="fitBtn" class="tool"></button>
+  <button id="shelfBtn" class="tool"></button><button id="deskBtn" class="tool"></button><button id="fitBtn" class="tool"></button>
   <b id="heading"></b><span class="grow"></span>
-  <span id="people"></span><button id="roomBtn"></button><button id="fullBtn" class="tool"></button><button id="setBtn" class="tool"></button>
+  <span id="people"></span><button id="musicBtn" class="tool"></button><button id="roomBtn"></button><button id="fullBtn" class="tool"></button><button id="setBtn" class="tool"></button>
 </header>
 <button id="prev" class="turn">‹</button><button id="next" class="turn">›</button><button id="index" class="turn"></button>
+<button id="eraseBtn" hidden></button>
+<div id="dropHint" hidden><b>⌄</b> <span data-t="Down to the table"></span></div>
 <div id="assist" hidden></div><div id="clue" hidden></div>
 <div id="toasts"></div>
 <dialog id="room">
@@ -42,13 +44,38 @@
   <label><span data-t="Sleeve"></span><span id="sleeves" class="dots"></span></label>
   <label><span data-t="Left-handed"></span><input id="left" type="checkbox"></label>
   <label><span data-t="My hands"></span><select id="hands"><option value="1" data-t="shown"></option><option value="0.35" data-t="faint"></option><option value="0" data-t="hidden"></option></select></label>
+  <label><span data-t="A finger"></span><select id="fingers"><option value="auto" data-t="writes, unless a pen is in use"></option><option value="write" data-t="always writes"></option><option value="carry" data-t="only drags"></option></select></label>
+  <label><span data-t="Paper"></span><select id="theme"><option value="day" data-t="light"></option><option value="night" data-t="dark, gold and silver"></option><option value="auto" data-t="as the device"></option></select></label>
+  <label><span data-t="Before the fire"></span><select id="pet"><option value="cat" data-t="a cat"></option><option value="dog" data-t="a dog"></option><option value="none" data-t="nobody"></option></select></label>
+  <label><span data-t="The fire burns"></span><input id="fire" type="checkbox"></label>
   <label><span data-t="Sounds"></span><input id="sound" type="checkbox"></label>
   <label><span data-t="Come nearer to write"></span><input id="near" type="checkbox"></label>
   <label><span data-t="Language"></span><select id="lang"><option value="tr">Türkçe</option><option value="en">English</option></select></label>
   <label><span data-t="Handwriting"></span><span id="inkName"></span></label>
+  <button id="formBtn" data-t="Improve handwriting recognition"></button>
   <button id="again" data-t="Start this magazine over"></button>
   <button class="shut" data-t="Close"></button>
 </dialog>
-<script type="module" src="v/4e41c0e572-20261125215128/client/main.js"></script>
+<dialog id="archive">
+  <h2 data-t="Archive box"></h2>
+  <p id="archiveNone" data-t="Episodes solved to the end are kept here."></p>
+  <ul id="archived"></ul>
+  <button class="shut" data-t="Close"></button>
+</dialog>
+<dialog id="music">
+  <h2 data-t="Music"></h2>
+  <p id="track"></p>
+  <div class="row player"><button id="prevTrack">⏮</button><button id="playBtn" class="main"></button><button id="nextTrack">⏭</button><button id="shuffleBtn">🔀</button></div>
+  <label><span data-t="Music volume"></span><input id="musicVol" type="range" min="0" max="100"></label>
+  <label><span data-t="Effects volume"></span><input id="fxVol" type="range" min="0" max="100"></label>
+  <label><span data-t="Equalizer"></span><input id="eqOn" type="checkbox"></label>
+  <div id="eq">
+    <div id="knobs"></div>
+    <div class="row"><button id="eqFlat" data-t="Reset"></button><select id="eqPreset"></select></div>
+    <p class="fine" data-t="Turn a knob up or down; a double tap sets it to 0 dB."></p>
+  </div>
+  <button class="shut" data-t="Close"></button>
+</dialog>
+<script type="module" src="v/4e41c0e572-20261125231612/client/main.js"></script>
 </body>
 </html>
