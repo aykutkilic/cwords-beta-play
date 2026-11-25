@@ -1,0 +1,6 @@
+Handwriting model (ink/weights.json): trained on UJI Pen Characters (Version 2),
+UCI Machine Learning Repository, https://archive.ics.uci.edu/dataset/177
+– licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). The strokes
+were varied, and Turkish marks drawn onto them, for training.
+Hand: Hand Models for Godot XR Tools by Miodrag Sejic (DigitalN8m4r3), CC0.
+three.js: MIT, see vendor/three.LICENSE. Rooms connect through PeerJS (MIT).
