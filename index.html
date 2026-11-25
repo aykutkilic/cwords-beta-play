@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Bulmaca Keyfi 3D</title>
+<meta name="theme-color" content="#1d140d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a63a33'/%3E%3Cpath d='M7 7h18v18H7z' fill='%23fffaf0'/%3E%3Cpath d='M16 7v18M7 16h18' stroke='%235d1f1b' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="v/4e41c0e572-20261125104732/client/style.css">
+</head>
+<body>
+<canvas id="view"></canvas>
+<header id="bar">
+  <button id="pencilBtn" class="tool on"></button><button id="eraserBtn" class="tool"></button><button id="fitBtn" class="tool"></button>
+  <span class="grow"></span>
+  <span id="people"></span><button id="roomBtn"></button><button id="setBtn"></button>
+</header>
+<button id="prev" class="turn">‹</button><button id="next" class="turn">›</button>
+<div id="clue" hidden></div>
+<div id="toasts"></div>
+<dialog id="room">
+  <h2 data-t="Solve together"></h2>
+  <div id="roomOut">
+    <div class="row"><input id="newPass" maxlength="20" autocomplete="off"><button id="openBtn" class="main"></button></div>
+    <div class="row"><input id="code" maxlength="4" autocomplete="off" autocapitalize="characters"><input id="joinPass" maxlength="20" autocomplete="off"><button id="joinBtn" class="main"></button></div>
+  </div>
+  <div id="roomIn" hidden>
+    <div class="row"><b id="codeShow"></b><button id="copyBtn"></button><button id="leaveBtn"></button></div>
+    <h3 data-t="At the table"></h3><ul id="members"></ul>
+  </div>
+  <p id="roomMsg"></p>
+  <button class="shut" data-t="Close"></button>
+</dialog>
+<dialog id="settings">
+  <h2 data-t="Settings"></h2>
+  <label><span data-t="Your name"></span><input id="name" maxlength="16"></label>
+  <label><span data-t="Skin"></span><span id="skins" class="dots"></span></label>
+  <label><span data-t="Sleeve"></span><span id="sleeves" class="dots"></span></label>
+  <label><span data-t="Left-handed"></span><input id="left" type="checkbox"></label>
+  <label><span data-t="My hands"></span><select id="hands"><option value="1" data-t="shown"></option><option value="0.35" data-t="faint"></option><option value="0" data-t="hidden"></option></select></label>
+  <label><span data-t="Sounds"></span><input id="sound" type="checkbox"></label>
+  <label><span data-t="Language"></span><select id="lang"><option value="tr">Türkçe</option><option value="en">English</option></select></label>
+  <label><span data-t="Handwriting"></span><span id="inkName"></span></label>
+  <button id="again" data-t="Start this magazine over"></button>
+  <button class="shut" data-t="Close"></button>
+</dialog>
+<script type="module" src="v/4e41c0e572-20261125104732/client/main.js"></script>
+</body>
+</html>
