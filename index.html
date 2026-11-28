@@ -10,14 +10,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Bulmaca 3D">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a63a33'/%3E%3Cpath d='M7 7h18v18H7z' fill='%23fffaf0'/%3E%3Cpath d='M16 7v18M7 16h18' stroke='%235d1f1b' stroke-width='2'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="v/954de938b8-20261128075624/client/style.css">
+<link rel="stylesheet" href="v/27d1f2c847-20261128081515/client/style.css">
 </head>
 <body class="no-music">
 <canvas id="view"></canvas>
 <header id="bar">
   <button id="shelfBtn" class="tool"></button><button id="deskBtn" class="tool"></button><button id="fitBtn" class="tool"></button>
   <b id="heading"></b><span class="grow"></span>
-  <span id="people"></span><button id="musicBtn" class="tool"></button><button id="roomBtn"></button><button id="fullBtn" class="tool"></button><button id="setBtn" class="tool"></button>
+  <span id="people"></span><button id="walletBtn" class="tool"></button><button id="musicBtn" class="tool"></button><button id="roomBtn"></button><button id="fullBtn" class="tool"></button><button id="setBtn" class="tool"></button>
 </header>
 <button id="prev" class="turn">‹</button><button id="next" class="turn">›</button><button id="index" class="turn"></button>
 <button id="eraseBtn" hidden></button>
@@ -56,6 +56,14 @@
   <button id="again" data-t="Start this magazine over"></button>
   <button class="shut" data-t="Close"></button>
 </dialog>
+<dialog id="shop">
+  <h2 data-t="Credits"></h2>
+  <p id="purse"></p>
+  <p class="fine" data-t="A puzzle solved brings 10 credits (5 if a hint was used), an episode solved to the end 25 more: each once."></p>
+  <h3 data-t="For the table"></h3><ul id="wares" class="shop"></ul>
+  <h3 data-t="Episodes"></h3><ul id="issues" class="shop"></ul>
+  <button class="shut" data-t="Close"></button>
+</dialog>
 <dialog id="archive">
   <h2 data-t="Archive box"></h2>
   <p id="archiveNone" data-t="Episodes solved to the end are kept here."></p>
@@ -76,6 +84,6 @@
   </div>
   <button class="shut" data-t="Close"></button>
 </dialog>
-<script type="module" src="v/954de938b8-20261128075624/client/main.js"></script>
+<script type="module" src="v/27d1f2c847-20261128081515/client/main.js"></script>
 </body>
 </html>
